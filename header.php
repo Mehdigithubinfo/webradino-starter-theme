@@ -19,7 +19,24 @@
             <?php bloginfo( 'name' ); ?>
         </a>
 
-        <nav class="site-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'webradino' ); ?>">
+        <button
+    class="menu-toggle"
+    type="button"
+    aria-controls="primary-navigation"
+    aria-expanded="false"
+>
+  <span class="menu-toggle-icon" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+</span>
+
+<span class="screen-reader-text">
+    <?php esc_html_e( 'Toggle Menu', 'webradino' ); ?>
+</span>
+</button>
+
+        <nav  id="primary-navigation" class="site-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'webradino' ); ?>">
             <?php
             wp_nav_menu(
                 array(
