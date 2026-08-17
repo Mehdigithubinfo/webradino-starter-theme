@@ -45,12 +45,12 @@ body {
 
 /* Links */
 
-a {
+.post-title a {
     color: var(--color-primary);
-    text-decoration: none;
 }
 
-a:hover {
+.post-title a:hover,
+.post-title a:focus-visible {
     color: var(--color-accent);
 }
 
