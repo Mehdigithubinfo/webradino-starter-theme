@@ -2,51 +2,55 @@
 get_header();
 ?>
 
-<div class="container">
+<main id="main-content" class="site-main">
 
-    <?php if ( have_posts() ) : ?>
+    <div class="container">
 
-        <div class="posts">
+        <?php if ( have_posts() ) : ?>
 
-            <?php while ( have_posts() ) : the_post(); ?>
+            <div class="posts">
 
-                <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card' ); ?>>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-                    <?php if ( has_post_thumbnail() ) : ?>
-                        <a href="<?php the_permalink(); ?>" class="post-thumbnail">
-                            <?php the_post_thumbnail( 'large' ); ?>
-                        </a>
-                    <?php endif; ?>
+                    <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card' ); ?>>
 
-                    <div class="post-content">
-
-                        <h2 class="post-title">
-                            <a href="<?php the_permalink(); ?>">
-                                <?php the_title(); ?>
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <a href="<?php the_permalink(); ?>" class="post-thumbnail">
+                                <?php the_post_thumbnail( 'large' ); ?>
                             </a>
-                        </h2>
+                        <?php endif; ?>
 
-                        <div class="post-excerpt">
-                            <?php the_excerpt(); ?>
+                        <div class="post-content">
+
+                            <h2 class="post-title">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h2>
+
+                            <div class="post-excerpt">
+                                <?php the_excerpt(); ?>
+                            </div>
+
                         </div>
 
-                    </div>
+                    </article>
 
-                </article>
+                <?php endwhile; ?>
 
-            <?php endwhile; ?>
+            </div>
 
-        </div>
+            <?php the_posts_pagination(); ?>
 
-        <?php the_posts_pagination(); ?>
+        <?php else : ?>
 
-    <?php else : ?>
+            <p><?php esc_html_e( 'No posts found.', 'webradino' ); ?></p>
 
-        <p><?php esc_html_e( 'No posts found.', 'webradino' ); ?></p>
+        <?php endif; ?>
 
-    <?php endif; ?>
+    </div>
 
-</div>
+</main>
 
 <?php
 get_footer();
