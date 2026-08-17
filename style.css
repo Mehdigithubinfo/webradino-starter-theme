@@ -1,0 +1,165 @@
+/*
+Theme Name: WebRadino Starter Theme
+Theme URI: https://webradino.ir
+Author: WebRadino
+Author URI: https://webradino.ir
+Description: A lightweight, modern and developer-friendly WordPress starter theme.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 8.1
+Text Domain: webradino
+*/
+
+:root {
+    --color-primary: #0F172A;
+    --color-accent: #06B6D4;
+    --color-background: #FFFFFF;
+    --color-surface: #F8FAFC;
+    --color-text: #334155;
+    --color-border: #E2E8F0;
+
+    --container-width: 1200px;
+    --spacing: 1rem;
+    --radius: 8px;
+}
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+}
+
+/* Links */
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+/* Container */
+
+.container {
+    width: min(100% - 2rem, var(--container-width));
+    margin-inline: auto;
+}
+
+/* Header */
+
+.site-header {
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.site-logo {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.site-navigation ul {
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Main */
+
+.site-main {
+    min-height: 60vh;
+    padding: 3rem 0;
+}
+
+/* Posts */
+
+.posts {
+    display: grid;
+    gap: 2rem;
+}
+
+.post-card {
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+
+.post-thumbnail {
+    display: block;
+}
+
+.post-thumbnail img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.post-content {
+    padding: 1.5rem;
+}
+
+.post-title {
+    margin-top: 0;
+}
+
+.post-title a {
+    color: var(--color-primary);
+}
+
+.post-excerpt {
+    color: var(--color-text);
+}
+
+/* Footer */
+
+.site-footer {
+    background: var(--color-primary);
+    color: #FFFFFF;
+    padding: 2rem 0;
+}
+
+.site-copyright {
+    margin: 0;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .site-header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-navigation ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
